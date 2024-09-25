@@ -121,7 +121,7 @@ void screenSetup() {
     for (uint8_t col = 0; col < nCols; col++) {
       uint8_t index = col + row * nCols;
       tft.setFreeFont(LABEL2_FONT);    
-      key[index].initButtonUL(&tft, col * buttonWidth, row * buttonHeight, buttonWidth, buttonHeight, TFT_GREEN, TFT_BLACK, TFT_WHITE, 1, HaltechValueDisplay(HT_NONE));
+      key[index].initButtonUL(&tft, col * buttonWidth, row * buttonHeight, buttonWidth, buttonHeight, TFT_GREEN, TFT_BLACK, TFT_WHITE, 1);
       key[index].drawButton();
     }
   }
@@ -153,7 +153,7 @@ void screenLoop() {
       htc.values[buttonValues[buttonIndex]].justUpdated = true;
     }
     if (htc.values[buttonValues[buttonIndex]].justUpdated) {
-      key[buttonIndex].drawValue(htc.values[buttonValues[buttonIndex]].scaled_value);
+      //key[buttonIndex].drawValue(htc.values[buttonValues[buttonIndex]].scaled_value);
       htc.values[buttonValues[buttonIndex]].justUpdated = false;
     }
 

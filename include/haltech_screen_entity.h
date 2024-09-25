@@ -3,6 +3,7 @@
 
 #include "haltech_can.h"
 #include <string>
+#include <TFT_eSPI.h>
 
 typedef enum {
   BUTTON_STATUS_OFF = 0,
@@ -15,7 +16,7 @@ typedef enum {
   BUTTON_STATUS_COLOR_RED,
 } buttonStatusColor_e;
 
-class HaltechScreenEntity {
+class HaltechScreenEntity : TFT_eSPI_Button {
   public:
     virtual bool isButton();
   private:
